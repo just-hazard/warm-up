@@ -4,7 +4,6 @@ import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.inspectors.forAll
 import io.kotest.matchers.throwable.shouldHaveMessage
-import org.junit.jupiter.api.Assertions.*
 
 internal class GameNumbersTest : BehaviorSpec({
     given("game numbers") {
@@ -13,7 +12,7 @@ internal class GameNumbersTest : BehaviorSpec({
             then("예외케이스 발생") {
                 makeNumbers.forAll {
                     shouldThrow<IndexOutOfBoundsException> {
-                        numbers.addNumber(it)
+                        numbers.addNumbers(it)
                     }.shouldHaveMessage(ErrorMessage.NUMBER_LENGTH_THREE)
                 }
             }
