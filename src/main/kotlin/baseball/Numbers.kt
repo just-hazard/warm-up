@@ -9,6 +9,11 @@ object Numbers {
         }
     }
 
+    fun putNumbersOnList(): MutableCollection<Number> {
+        return numbers.values
+    }
+
+
     fun confirmNumber(inputNumber: Int): Number {
         require(numbers.containsKey(inputNumber).not()) {
             return numbers[inputNumber]!!

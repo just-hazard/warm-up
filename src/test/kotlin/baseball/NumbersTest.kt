@@ -3,6 +3,7 @@ package baseball
 import baseball.ErrorMessage.NUMBER_SCOPE_ONE_NINE
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
+import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.throwable.shouldHaveMessage
 import io.kotest.matchers.types.shouldBeSameInstanceAs
 
@@ -21,6 +22,12 @@ internal class NumbersTest : BehaviorSpec ({
                 shouldThrow<IllegalArgumentException> {
                     Numbers.confirmNumber(10)
                 }.shouldHaveMessage(NUMBER_SCOPE_ONE_NINE)
+            }
+        }
+        `when`(" Numbers On Collection") {
+            val result = Numbers.putNumbersOnList()
+            then("사이즈 체크") {
+                result shouldHaveSize 9
             }
         }
     }
