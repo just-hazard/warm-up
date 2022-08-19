@@ -8,6 +8,7 @@ import io.kotest.matchers.types.shouldBeSameInstanceAs
 
 internal class NumbersTest : BehaviorSpec ({
     given("presenceNumbers") {
+
         `when`("번호가 존재할 경우") {
             val result = Numbers.confirmNumber(2)
             then("번호 객체 리턴") {

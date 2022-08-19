@@ -2,7 +2,7 @@ package baseball
 
 import baseball.ErrorMessage.NUMBER_SCOPE_ONE_NINE
 
-class Number(number: Int) {
+class Number(val number: Int) {
     init {
         require(number in MINIMUM_NUMBER..MAXIMUM_NUMBER) {
             throw IllegalArgumentException(NUMBER_SCOPE_ONE_NINE)

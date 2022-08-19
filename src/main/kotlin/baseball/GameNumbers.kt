@@ -3,7 +3,7 @@ package baseball
 class GameNumbers {
     private val numbers = mutableListOf<Number>()
 
-    fun addNumbers(numbers: MutableList<Number>) {
+    fun addNumbers(numbers: List<Number>) {
         if (numbers.size == NUMBER_LENGTH) {
             this.numbers.addAll(numbers)
             return
